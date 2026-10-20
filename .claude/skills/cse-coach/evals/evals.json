@@ -1,0 +1,77 @@
+{
+  "skill_name": "cse-coach",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm ready to start today. What's on deck?",
+      "expected_output": "A single message presenting today's board: each fixture problem as a name plus its file link and LC link only, no Note/Focus/technique/comfort column, no narration before or after.",
+      "files": ["evals/files/schedule_fixture.md"],
+      "expectations": [
+        "The reply is a single assistant message; any tool call it makes happens before the text, not interleaved with it.",
+        "The reply lists each problem on the fixture day as a name plus links only, with no Note, Focus, technique, or comfort column.",
+        "The reply contains no interim narration (no 'let me check', no partial board later replaced by a final one).",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Something's wrong with my contains-duplicate solution, can you help?",
+      "expected_output": "The coach reads the fixture solution file before giving any hint, then gives a hint pointing at the bug without naming the technique or handing over the fix.",
+      "files": ["evals/files/217_contains_duplicate.py"],
+      "expectations": [
+        "A Read tool call on 217_contains_duplicate.py appears before any hint about the bug.",
+        "The reply gives a hint, not the fixed code and not the technique name.",
+        "The reply is a single message with no interim narration before the final hint.",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Done with 217, contains duplicate.",
+      "expected_output": "The coach asks for time AND space complexity, each with a why-clause, before proposing any rating; once proposed, the rating carries the verdict and the reasoning in full.",
+      "files": ["evals/files/217_contains_duplicate.py", "evals/files/tracker_fixture.md"],
+      "expectations": [
+        "The reply asks for time AND space complexity, each with a why-clause, before proposing any of green/yellow/red.",
+        "No rating is proposed before that complexity ask.",
+        "Once proposed, the rating states the verdict plus the reasoning in full, not a length-capped summary.",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What is a monotonic stack for?",
+      "expected_output": "One short paragraph naming the concrete use case before further jargon, ending with an offer to expand rather than an unprompted second paragraph.",
+      "files": [],
+      "expectations": [
+        "The reply is one short paragraph, or a table/bullets only if it has more than two parts.",
+        "The reply states the concrete value or use case before naming further jargon.",
+        "The reply ends with an offer to expand rather than an unprompted second paragraph.",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Let's close out the session.",
+      "expected_output": "An unprompted, full work report — what changed, what broke, what is unfinished — with every claim backed by a tool call in the transcript.",
+      "files": ["evals/files/tracker_fixture.md", "evals/files/schedule_fixture.md"],
+      "expectations": [
+        "The reply states, unprompted and in full, what changed, what broke (if anything), and what is unfinished.",
+        "Every claim about a file or row changed has a matching Read, Edit, Write, or Bash tool call in the transcript.",
+        "The reply does not ask the learner to request a report of what was done.",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Explain Dijkstra vs BFS, I'm lost.",
+      "expected_output": "2-3 core facts distinguishing the two algorithms, then a stop and an offer to go deeper, with no proof and every acronym expanded.",
+      "files": [],
+      "expectations": [
+        "The reply gives 2-3 core facts distinguishing Dijkstra from BFS, then stops.",
+        "The reply contains no full proof or derivation, and expands any acronym before using it.",
+        "The reply offers to go deeper rather than continuing unprompted.",
+        "Judged >= 1 on each of groundedness, narrative, and readability per evals/rubric.md."
+      ]
+    }
+  ]
+}
