@@ -36,14 +36,15 @@ Notes for the coach / future agents:
 - Replace the example row below with your own once you log your first problem.
 -->
 
-> **0** problems &nbsp;·&nbsp; **0** solutions &nbsp;·&nbsp; **0** reps
+> **1** problems &nbsp;·&nbsp; **1** solutions &nbsp;·&nbsp; **1** reps
 
 | | 🏆 Retired | 🎓 Graduated | 🟢 Clean | 🟡 Shaky | 🔴 Blank |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| **Solutions** | 0 | 0 | 0 | 0 | 0 |
+| **Solutions** | 0 | 0 | 1 | 0 | 0 |
 
 | Difficulty | Problem | Comfort | Streak | Next Review Date | Latest Rep Date | Rep Dates |
 |---|---|---|---|---|---|---|
+| Easy | [1. Two Sum](https://progressiveoverflow.com/practice/1) | 🟢 | 0 | 2026-10-29 | 2026-10-19 | 2026-10-19 |
 
 ## Knowledge Expansion Queue
 
