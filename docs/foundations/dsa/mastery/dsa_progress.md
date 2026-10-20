@@ -44,7 +44,6 @@ Notes for the coach / future agents:
 
 | Difficulty | Problem | Comfort | Streak | Next Review Date | Latest Rep Date | Rep Dates |
 |---|---|---|---|---|---|---|
-| Easy | [1. Two Sum](https://leetcode.com/problems/two-sum/) | 🔴 | 0 |  |  |  |
 
 ## Knowledge Expansion Queue
 
